@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -43,9 +45,14 @@ public class VeikalsGUI extends Application{
 		stage = arg0;
 		VBox vBox = new VBox();
 		
-		Scene shoppingScene = new Scene(vBox, 600, 500);
-		arg0.setTitle("Veikals VEA");
 		
+		Scene shoppingScene = new Scene(vBox, 600, 500);
+		vBox.setSpacing(10);
+		arg0.setTitle("Veikals VEA");
+		Image i1 = new Image("file:maize.jpg");
+		Image i2 = new Image ("file:telefons.jpg");
+		ImageView iv1 = new ImageView(i1); 
+		ImageView iv2 = new ImageView(i2); 
 		Label l1 = new Label ("Izvelieties preci uzspiezot uz tas: ");
 		l1.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
 		Button telefons1 = new Button("Telefons: " + p1 );
@@ -55,10 +62,11 @@ public class VeikalsGUI extends Application{
 		Button maize2 = new Button("Maize: " + b2);
 		
 		
-	   
-		vBox.getChildren().addAll(l1,telefons1, telefons2, maize1, maize2);
+		
+		vBox.getChildren().addAll(l1,iv2,telefons1, telefons2,iv1, maize1, maize2);
 		
 		arg0.setScene(shoppingScene);
+	
 		arg0.show();
 	}
 	}
